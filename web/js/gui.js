@@ -83,6 +83,9 @@ game.gui.resize = function() {
 	var widthToHeight = 6 / 4;
 	var newWidth = window.innerWidth;
 	var newHeight = window.innerHeight;
+	if (game.isDebug) {
+		alert(newWidth + " " + newHeight);
+	}
 	var newWidthToHeight = newWidth / newHeight;
 
 	if (newWidthToHeight > widthToHeight) {
