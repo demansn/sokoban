@@ -16,6 +16,7 @@ game.stackStates = [];
 game.currentState = null;
 game.nextLevel = 0;
 game.isDebug = false;
+game.isInit = false;
 
 
 game.setState = function(state) {
@@ -234,6 +235,7 @@ game.init = function() {
 		this.levelSelection.unlock(this.nextLevel);
 		this.userInput.init();
 		this.setState("mainMenu");
+		this.isInit = false;
 	} catch (e) {
 		alert(e.message);
 	}
