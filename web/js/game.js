@@ -16,7 +16,7 @@ game.stackStates = [];
 game.currentState = null;
 game.nextLevel = 0;
 game.isDebug = false;
-game.isInit = false;
+game.initialized = false;
 
 
 game.setState = function(state) {
@@ -111,131 +111,133 @@ game.completeLevel = function() {
 
 game.init = function() {
 	try {
-		this.gui.addScreen("mainMenu");
-		this.gui.addScreen("levelSelection");
-		this.gui.addScreen("game");
-		this.gui.addScreen("settings");
-		this.gui.addScreen("pause");
-		this.gui.addScreen("result");
-		this.gui.addScreen("gameOver");
+		if (!this.initialized) {
+			this.gui.addScreen("mainMenu");
+			this.gui.addScreen("levelSelection");
+			this.gui.addScreen("game");
+			this.gui.addScreen("settings");
+			this.gui.addScreen("pause");
+			this.gui.addScreen("result");
+			this.gui.addScreen("gameOver");
 
-		this.canvas = new this.Canvas();
-		this.canvas.setup(510, 390);
-		document.getElementById("level").appendChild(this.canvas.view);
+			this.canvas = new this.Canvas();
+			this.canvas.setup(510, 390);
+			document.getElementById("level").appendChild(this.canvas.view);
 
-		this.gui.initPosition(600, 400);
+			this.gui.initPosition(600, 400);
 
 
-		/* инициализация кнопок */
+			/* инициализация кнопок */
 
-		//menu
-		this.gui.addButton({
-			id: "menuPlayBtn",
-			up: function() {
-				game.setState("levelSelection");
-			}
-		});
+			//menu
+			this.gui.addButton({
+				id: "menuPlayBtn",
+				up: function() {
+					game.setState("levelSelection");
+				}
+			});
 
-		this.gui.addButton({
-			id: "lsBackBtn",
-			up: function() {
-				game.setState("mainMenu");
-			}
-		});
+			this.gui.addButton({
+				id: "lsBackBtn",
+				up: function() {
+					game.setState("mainMenu");
+				}
+			});
 //game
-		this.gui.addButton({
-			id: "gamePauseBtn",
-			up: function() {
-				game.setState("pause");
-			}
-		});
+			this.gui.addButton({
+				id: "gamePauseBtn",
+				up: function() {
+					game.setState("pause");
+				}
+			});
 
-		this.gui.addButton({
-			id: "gameRetryBtn",
-			up: function() {
-				game.level.reset();
-			}
-		});
+			this.gui.addButton({
+				id: "gameRetryBtn",
+				up: function() {
+					game.level.reset();
+				}
+			});
 //result
-		this.gui.addButton({
-			id: "resultStopBtn",
-			up: function() {
-				game.setState("mainMenu");
-			}
-		});
+			this.gui.addButton({
+				id: "resultStopBtn",
+				up: function() {
+					game.setState("mainMenu");
+				}
+			});
 
-		this.gui.addButton({
-			id: "resultRetryBtn",
-			up: function() {
-				game.level.reset();
-				game.setPreviousState();
-			}
-		});
+			this.gui.addButton({
+				id: "resultRetryBtn",
+				up: function() {
+					game.level.reset();
+					game.setPreviousState();
+				}
+			});
 
-		this.gui.addButton({
-			id: "resultLSBtn",
-			up: function() {
-				game.setState("levelSelection");
-			}
-		});
+			this.gui.addButton({
+				id: "resultLSBtn",
+				up: function() {
+					game.setState("levelSelection");
+				}
+			});
 
-		this.gui.addButton({
-			id: "resultForwardBtn",
-			up: function() {
-				game.setState("loadLevel");
-			}
-		});
+			this.gui.addButton({
+				id: "resultForwardBtn",
+				up: function() {
+					game.setState("loadLevel");
+				}
+			});
 
-		//pause
-		this.gui.addButton({
-			id: "pauseStopBtn",
-			up: function() {
-				game.setState("mainMenu");
-			}
-		});
+			//pause
+			this.gui.addButton({
+				id: "pauseStopBtn",
+				up: function() {
+					game.setState("mainMenu");
+				}
+			});
 
-		this.gui.addButton({
-			id: "pauseRetryBtn",
-			up: function() {
-				game.level.reset();
-				game.setPreviousState();
-			}
-		});
+			this.gui.addButton({
+				id: "pauseRetryBtn",
+				up: function() {
+					game.level.reset();
+					game.setPreviousState();
+				}
+			});
 
-		this.gui.addButton({
-			id: "pauseLSBtn",
-			up: function() {
-				game.setState("levelSelection");
-			}
-		});
+			this.gui.addButton({
+				id: "pauseLSBtn",
+				up: function() {
+					game.setState("levelSelection");
+				}
+			});
 
-		this.gui.addButton({
-			id: "pausePlayBtn",
-			up: function() {
-				game.setState("game");
-			}
-		});
+			this.gui.addButton({
+				id: "pausePlayBtn",
+				up: function() {
+					game.setState("game");
+				}
+			});
 
-		this.gui.addButton({
-			id: "gameOverStopBtn",
-			up: function() {
-				game.setState("mainMenu");
-			}
-		});
+			this.gui.addButton({
+				id: "gameOverStopBtn",
+				up: function() {
+					game.setState("mainMenu");
+				}
+			});
 
 
 
-		this.gui.hideScreens();
-		window.addEventListener("resize", function() {
-			game.gui.resize();
-		}, false);
+			this.gui.hideScreens();
+			window.addEventListener("resize", function() {
+				game.gui.resize();
+			}, false);
 
-		//this.gui.resize();
-		this.levelSelection.init();
-		this.levelSelection.unlock(this.nextLevel);
-		this.userInput.init();
-		this.setState("mainMenu");
-		this.isInit = false;
+			this.gui.resize();
+			this.levelSelection.init();
+			this.levelSelection.unlock(this.nextLevel);
+			this.userInput.init();
+			this.setState("mainMenu");
+			this.initialized = true;
+		}
 	} catch (e) {
 		alert(e.message);
 	}
