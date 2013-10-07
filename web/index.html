@@ -1,0 +1,94 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="css/main.css">
+ </head>
+ <body onload="DOMLoad();">
+  <div id="app">
+   <div id="gameArea">
+    <div id="mainMenu" class="screen">
+     <div id="gameName" class="egui">Двигай лeдышки.</div>
+     <div id="menuPlayBtn"     class="egui"></div>
+    </div>
+    <div id="game" class="screen">
+     <div id="level" class="egui"></div>
+     <div id="gui" class="egui"></div>
+     <div id="gameRetryBtn"    class="guiBtn egui"></div>
+     <div id="gamePauseBtn"    class="guiBtn egui"></div>
+    </div>
+    <div id="settings" class="screen"></div>
+    <div id="levelSelection" class="screen">
+
+     <div id="lsBackBtn" class="guiBtn egui"></div>
+
+     <div id="item1"  class="item egui">1</div>
+     <div id="item2"  class="item egui">2</div>
+     <div id="item3"  class="item egui">3</div>
+     <div id="item4"  class="item egui">4</div>
+     <div id="item5"  class="item egui">5</div>
+     <div id="item6"  class="item egui">6</div>
+     <div id="item7"  class="item egui">7</div>
+     <div id="item8"  class="item egui">8</div>
+     <div id="item9"  class="item egui">9</div>
+     <div id="item10" class="item egui">10</div>
+     <div id="item11" class="item egui">11</div>
+     <div id="item12" class="item egui">12</div>
+     <div id="item13" class="item egui">13</div>
+     <div id="item14" class="item egui">14</div>
+     <div id="item15" class="item egui">15</div>
+     <div id="item16" class="item egui">16</div>
+     <div id="item17" class="item egui">17</div>
+     <div id="item18" class="item egui">18</div>
+     <div id="item19" class="item egui">19</div>
+     <div id="item20" class="item egui">20</div>
+    </div>
+    <div id="pause" class="screen">
+     <div id="pauseTitle" class="egui">Пауза</div>
+     <div id="pauseStopBtn" class="pauseBtn egui"></div>
+     <div id="pauseLSBtn" class="pauseBtn egui"></div>
+     <div id="pauseRetryBtn" class="pauseBtn egui"></div>
+     <div id="pausePlayBtn" class="pauseBtn egui"></div>
+    </div>
+    <div id="result" class="screen">
+     <div id="resultTitle" class="egui">Уровень пройден!</div>
+     <div id="resultStopBtn" class="resultBtn egui"></div>
+     <div id="resultLSBtn" class="resultBtn egui"></div>
+     <div id="resultRetryBtn" class="resultBtn egui"></div>
+     <div id="resultForwardBtn" class="resultBtn egui"></div>
+    </div>
+    <div id="about" class="screen"></div>
+    <div id="gameOver" class="screen">
+     <div id="gameOverText" class="egui">ПОЗДРАВЛЯЕМ! <br> ВЫ ПРОШЛИ ИГРУ.</div>
+     <div id="gameOverStopBtn" class="egui"></div>
+    </div>
+   </div>
+  </div>
+
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/ButtonController.js"></script>
+  <script type="text/javascript" src="js/DOMObjectController.js"></script>
+  <script type="text/javascript" src="js/Canvas.js"></script>
+  <script type="text/javascript" src="js/LevelBlock.js"></script>
+  <script type="text/javascript" src="js/Pusher.js"></script>
+  <script type="text/javascript" src="js/MovingBox.js"></script>
+  <script type="text/javascript" src="js/Caretaker.js"></script>
+  <script type="text/javascript" src="js/playback.js"></script>
+  <script type="text/javascript" src="js/eventHandling.js"></script>
+  <script type="text/javascript" src="js/collisionDetection.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/userInput.js"></script>
+  <script type="text/javascript" src="js/gui.js"></script>
+  <script type="text/javascript" src="js/level.js"></script>
+  <script type="text/javascript" src="js/levelSelection.js"></script>
+  <script type="text/javascript" src="js/DrawInput.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/cordova.js"></script>
+
+ </body>
+</html>

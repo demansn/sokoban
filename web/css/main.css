@@ -1,0 +1,492 @@
+root {
+ display: block;
+}
+
+body{
+ -webkit-touch-callout: none;
+ -webkit-text-size-adjust: none;
+ -webkit-user-select: none;
+}
+
+* {
+ -webkit-user-select:none;
+ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+ -moz-user-select: none;
+ -o-user-select:none;
+ -khtml-user-select:none;
+ -webkit-touch-callout: none;
+ -webkit-text-size-adjust: none;
+ -webkit-user-select: none;
+}
+
+#app{
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ background: black;
+}
+
+#gameArea{
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ width: 600px;
+ height: 400px;
+ margin-left: -300px;
+ margin-top: -200px;
+ background: white;
+ background-size: 88% 82%;
+ background-position-x: 50%;
+ background-position-y: 50%;
+ background-repeat: no-repeat;
+}
+
+
+.screen{
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ background: white;
+}
+
+#mainMenu div{
+ position: absolute;
+
+}
+
+#menuPlayBtn{
+ width: 150px;
+ height: 150px;
+ left: 225px;
+ top: 125px;
+ z-index: 1;
+ background: url("../media/img/playBtn.png");
+ background-size: 100% 100%;
+}
+
+#menuPlayBtn.selected {
+ background: url("../media/img/playBtnSelected.png");
+ background-size: 100% 100%;
+}
+#gameName{
+ width: 500px;
+ height: 50px;
+ left: 50px;
+ top: 50px;
+ font-size: 4em;
+ font-weight: bold;
+ text-align: center;
+ line-height: 1;
+ z-index: 1;
+}
+
+.guiBtn{
+ position: absolute;
+ width: 70px;
+ height: 70px;
+ z-index: 1;
+}
+
+
+#lsPlayBtn{
+ left: 520px;
+ top: 230px;
+ background: url("../media/img/playBtn.png");
+ background-size: 100% 100%;
+}
+
+#lsPlayBtn.selected {
+ background: url("../media/img/playBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#lsBackBtn{
+ left: 520px;
+ top: 320px;
+ background: url("../media/img/backBtn.png");
+ background-size: 100% 100%;
+}
+
+#lsBackBtn.selected {
+ background: url("../media/img/backBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+.item{
+ position: absolute;
+ border: solid 2px black;
+ width: 80px;
+ height: 80px;
+ font-size: 6em;
+ text-align: center;
+ font-weight: bold;
+ z-index: 1;
+}
+.itemLock{
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ width: 100%;
+ height: 100%;
+ z-index: 3;
+ background: black;
+}
+
+.itemSelected{
+ border: solid 2px green;
+}
+
+.itemSelection{
+ background: green;
+}
+
+
+#item1 {
+ left: 10px;
+ top: 10px;
+}
+#item2 {
+ left: 110px;
+ top: 10px;
+}
+
+#item3 {
+ left: 210px;
+ top: 10px;
+}
+
+#item4 {
+ left: 310px;
+ top: 10px;
+}
+
+#item5 {
+ left: 410px;
+ top: 10px;
+}
+
+#item6 {
+ left: 10px;
+ top: 110px;
+}
+
+#item7 {
+ left: 110px;
+ top: 110px;
+}
+
+#item8 {
+ left: 210px;
+ top: 110px;
+}
+
+#item9 {
+ left: 310px;
+ top: 110px;
+}
+
+#item10 {
+ left: 410px;
+ top: 110px;
+}
+
+#item11 {
+ left: 10px;
+ top: 210px;
+}
+
+#item12 {
+ left: 110px;
+ top: 210px;
+}
+
+#item13 {
+ left: 210px;
+ top: 210px;
+}
+
+#item14 {
+ left: 310px;
+ top: 210px;
+}
+
+#item15 {
+ left: 410px;
+ top: 210px;
+}
+
+#item16 {
+ left: 10px;
+ top: 310px;
+}
+
+#item17 {
+ left: 110px;
+ top: 310px;
+}
+
+#item18 {
+ left: 210px;
+ top: 310px;
+}
+
+#item19 {
+ left: 310px;
+ top: 310px;
+}
+
+#item20 {
+ left: 410px;
+ top: 310px;
+}
+
+#level{
+ position: absolute;
+ left: 0px;
+ top: 0px;
+ width: 500px;
+ height: 400px;
+}
+
+#gui{
+ position: absolute;
+ left: 500px;
+ top: 0px;
+ width: 100px;
+ height: 400px;
+}
+
+#gamePauseBtn {
+ position: absolute;
+ left: 520px;
+ top: 320px;
+ background: url("../media/img/pauseBtn.png");
+ background-size: 100% 100%;
+ z-index: 1;
+}
+
+#gamePauseBtn.selected {
+ background: url("../media/img/pauseBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#gameRetryBtn {
+ position: absolute;
+ left: 520px;
+ top: 230px;
+ background: url("../media/img/retryBtn.png");
+ background-size: 100% 100%;
+ z-index: 1;
+}
+
+#gameRetryBtn.selected {
+ background: url("../media/img/retryBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+
+
+
+
+/* level */
+canvas{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ left: 0px;
+ top: 0px;
+ z-index: 1;
+}
+.block{
+ position: absolute;
+}
+
+.block0{
+ background: black;
+}
+
+.block1{
+ background: white;
+}
+
+.block2{
+ background: green;
+}
+
+.activeBlock {
+ background: blue;
+}
+
+.pusher{
+ background: red;
+}
+
+
+/* окно результата */
+
+#resultTitle{
+ position: absolute;
+ width: 500px;
+ height: 50px;
+ left: 50px;
+ top: 25px;
+ text-align: center;
+ font-size: 4em;
+ font-weight: bold;
+ z-index: 1;
+}
+
+.resultBtn{
+ position: absolute;
+ width: 100px;
+ height: 100px;
+ z-index: 1;
+
+}
+
+#resultStopBtn{
+ left: 50px;
+ top:  250px;
+ background: url("../media/img/stopBtn.png");
+ background-size: 100% 100%;
+}
+
+#resultStopBtn.selected {
+ background: url("../media/img/stopBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#resultRetryBtn{
+ left: 170px;
+ top:  250px;
+ background: url("../media/img/retryBtn.png");
+ background-size: 100% 100%;
+}
+
+#resultRetryBtn.selected {
+ background: url("../media/img/retryBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#resultLSBtn{
+ left: 330px;
+ top:  250px;
+ background: url("../media/img/lsBtn.png");
+ background-size: 100% 100%;
+}
+
+#resultLSBtn.selected {
+ background: url("../media/img/lsBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#resultForwardBtn{
+ left: 450px;
+ top:  250px;
+ background: url("../media/img/forwardBtn.png");
+ background-size: 100% 100%;
+}
+
+#resultForwardBtn.selected {
+ background: url("../media/img/forwardBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+
+/* pause */
+
+#pauseTitle {
+ position: absolute;
+ width: 500px;
+ height: 50px;
+ left: 50px;
+ top: 25px;
+ text-align: center;
+ font-size: 4em;
+ font-weight: bold;
+ z-index: 1;
+}
+.pauseBtn{
+ position: absolute;
+ width: 100px;
+ height: 100px;
+ z-index: 1;
+}
+
+#pauseStopBtn{
+ left: 50px;
+ top:  250px;
+ background: url("../media/img/stopBtn.png");
+ background-size: 100% 100%;
+}
+#pauseStopBtn.selected{
+ background: url("../media/img/stopBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#pauseRetryBtn{
+ left: 170px;
+ top:  250px;
+ background: blue;
+ background: url("../media/img/retryBtn.png");
+ background-size: 100% 100%;
+}
+#pauseRetryBtn.selected{
+ background: url("../media/img/retryBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#pauseLSBtn{
+ left: 330px;
+ top:  250px;
+ background: url("../media/img/lsBtn.png");
+ background-size: 100% 100%;
+}
+#pauseLSBtn.selected{
+ background: url("../media/img/lsBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+#pausePlayBtn{
+ left: 450px;
+ top:  250px;
+ background: url("../media/img/playBtn.png");
+ background-size: 100% 100%;
+}
+
+#pausePlayBtn.selected{
+ background: url("../media/img/playBtnSelected.png");
+ background-size: 100% 100%;
+}
+
+/* game over */
+
+#gameOverStopBtn{
+ position: absolute;
+ left: 225px;
+ top: 125px;
+ width: 150px;
+ height: 150px;
+ background: url("../media/img/stopBtn.png");
+ background-size: 100% 100%;
+}
+
+#gameOverStopBtn.selected {
+ background: url("../media/img/stopBtnSelected.png");
+ background-size: 100% 100%;
+}
+#gameOverText{
+ position: absolute;
+ width: 600px;
+ height: 50px;
+ left: 0px;
+ top: 5px;
+ font-size: 4em;
+ font-weight: bold;
+ text-align: center;
+ line-height: 1;
+}
