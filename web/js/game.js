@@ -15,52 +15,56 @@ game.state = {
 game.stackStates = [];
 game.currentState = null;
 game.nextLevel = 0;
-game.isDebug = true;
+game.isDebug = false;
 
 
 game.setState = function(state) {
-	var st = this.state;
+	try {
+		var st = this.state;
 
-	switch (state) {
-		case st.mainMenu:
-			this.gui.showScreen(state);
-			break;
+		switch (state) {
+			case st.mainMenu:
+				this.gui.showScreen(state);
+				break;
 
-		case st.levelSelection:
-			this.gui.showScreen(state);
-			break;
+			case st.levelSelection:
+				this.gui.showScreen(state);
+				break;
 
-		case st.settings:
-			this.gui.showScreen(state);
-			break;
+			case st.settings:
+				this.gui.showScreen(state);
+				break;
 
-		case st.loadLevel:
-			this.loadLevel();
-			break;
+			case st.loadLevel:
+				this.loadLevel();
+				break;
 
-		case st.game:
-			game.playback.play();
-			this.gui.showScreen("game");
-			break;
+			case st.game:
+				game.playback.play();
+				this.gui.showScreen("game");
+				break;
 
-		case st.pause:
-			game.playback.pause();
-			this.gui.showScreen("pause");
-			break;
+			case st.pause:
+				game.playback.pause();
+				this.gui.showScreen("pause");
+				break;
 
-		case st.result:
-			this.gui.showScreen("result");
-			break;
-		case st.about:
+			case st.result:
+				this.gui.showScreen("result");
+				break;
+			case st.about:
 
-			break;
+				break;
+		}
+
+		if (this.currentState) {
+			this.stackStates.push(this.currentState);
+		}
+
+		this.currentState = state;
+	} catch (e) {
+		alert("game.setState() error - " + e.message);
 	}
-
-	if (this.currentState) {
-		this.stackStates.push(this.currentState);
-	}
-
-	this.currentState = state;
 
 };
 
@@ -225,7 +229,7 @@ game.init = function() {
 			game.gui.resize();
 		}, false);
 
-		this.gui.resize();
+		//this.gui.resize();
 		this.levelSelection.init();
 		this.levelSelection.unlock(this.nextLevel);
 		this.userInput.init();
